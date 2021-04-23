@@ -22,7 +22,7 @@ public class DatabaseManager {
    
     
     public func canCreateNewUser(with email: String, username: String, completion: (Bool) -> Void) {
-        
+      completion(true)
     }
     ///insert newuser data to database
       ///- parameters

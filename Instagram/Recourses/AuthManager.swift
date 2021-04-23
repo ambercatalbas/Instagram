@@ -27,9 +27,11 @@ public class AuthManager {
                 Auth.auth().createUser(withEmail: email, password: password) { result, error in
                     guard error == nil, result != nil else {
                         //Firebase auth could not reate account
+                        completion(false)
                         return
                     }
                   //  insert into Database
+                    
                     DatabaseManager.shared.insertNewUser(with: email, username: username) { inserted in
                         if inserted {
                             completion(true)
