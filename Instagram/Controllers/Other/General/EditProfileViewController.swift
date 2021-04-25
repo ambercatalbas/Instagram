@@ -99,9 +99,10 @@ final class EditProfileViewController: UIViewController, UITableViewDataSource {
         let model = models[indexPath.section][indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: FormTableViewCell.identifier, for: indexPath) as! FormTableViewCell
         cell.configure(with: model)
+        cell.delegate = self
         return cell
     }
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard  section == 1 else {
             return nil
         }
@@ -110,6 +111,7 @@ final class EditProfileViewController: UIViewController, UITableViewDataSource {
     //MARK-Action
     @objc private func didTapSave() {
         //save info to database
+        dismiss(animated: true, completion: nil)
     }
     @objc private func didTapCancel() {
        dismiss(animated: true, completion: nil)
@@ -127,4 +129,13 @@ final class EditProfileViewController: UIViewController, UITableViewDataSource {
         present(actionSheet, animated: true)
     
     }
+}
+
+extension EditProfileViewController: FormTableViewCellDelegate {
+    func formTableViewCell(_ cell: FormTableViewCell, didUpdateField updatedModel: EditProfileFormModel) {
+       //update the model
+        print(updatedModel.value ?? "nil")
+    }
+    
+    
 }
