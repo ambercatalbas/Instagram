@@ -18,8 +18,8 @@ final class EditProfileViewController: UIViewController, UITableViewDataSource {
 
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self,
-                           forCellReuseIdentifier: "cell")
+        tableView.register(FormTableViewCell.self,
+                           forCellReuseIdentifier: FormTableViewCell.identifier)
         return tableView
     }()
     private var models = [[EditProfileFormModel]]()
@@ -97,9 +97,15 @@ final class EditProfileViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = models[indexPath.section][indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = model.label
+        let cell = tableView.dequeueReusableCell(withIdentifier: FormTableViewCell.identifier, for: indexPath) as! FormTableViewCell
+        cell.configure(with: model)
         return cell
+    }
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        guard  section == 1 else {
+            return nil
+        }
+        return "Private İnformation"
     }
     //MARK-Action
     @objc private func didTapSave() {
