@@ -38,6 +38,30 @@ public class StorageManager {
 public enum userPostType {
     case photo,video
 }
+///represent userpost
 public struct UserPost {
+    let identifier : String
     let postType : userPostType
+    let thumbnailImage : URL
+    let postURL: URL //either video url or full resolution photo
+    let captain: String?
+    let likecount:[postLikes]
+    let comments: [postComment]
+    let createdDate: Date
+
+}
+struct postLikes {
+    let username: String
+    let postİdentifier: String
+}
+struct commentLikes {
+    let username: String
+    let commentİdentifier: String
+}
+struct postComment {
+    let identifier: String
+    let username: String
+    let text: String
+    let createDate: Date
+    let likes : [commentLikes]
 }
