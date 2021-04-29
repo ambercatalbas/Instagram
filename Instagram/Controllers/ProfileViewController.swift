@@ -13,6 +13,7 @@ final class ProfileViewController: UIViewController {
 
     private var collectionView: UICollectionView?
     
+    private var userPosts = [UserPost]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ final class ProfileViewController: UIViewController {
         layout.itemSize = CGSize(width: size, height: size)
         collectionView = UICollectionView(frame: .zero,
                                           collectionViewLayout: layout)
-        collectionView?.backgroundColor = .red
+        
         
         //Cell
         collectionView?.register(PhotoCollectionViewCell.self,
@@ -80,16 +81,27 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         if section == 0 {
             return 0
         }
+      //  return userPosts.count
         return 30
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        //let model = userPosts[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
+        
+      //  cell.configure(with: model)
         cell.configure(debug: "test")
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        
+        ///- get the model and open post controller
+        //let model = userPosts[indexPath.row]
+        let vc = PostViewController(model: nil)
+        vc.title = "Post"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
