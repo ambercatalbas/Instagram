@@ -9,7 +9,9 @@ import UIKit
 
 class ListViewController: UIViewController {
 
-    private let data: [String]
+    private let data: [UserRelationship]
+    
+
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -19,8 +21,9 @@ class ListViewController: UIViewController {
         
         return tableView
     }()
+    //MARK: init
     
-    init(data: [String]) {
+    init(data: [UserRelationship]) {
         self.data = data
         super.init(nibName: nil, bundle: nil)
         
@@ -59,14 +62,17 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: UserFollowTableViewCell.identifier,
                                                  for: indexPath) as! UserFollowTableViewCell
         
-        cell.configure(with: "")
-        
+        cell.configure(with: data[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         //go to profile selected cell
         let model = data[indexPath.row]
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 75
+        
     }
     
 }
