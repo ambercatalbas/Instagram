@@ -7,13 +7,25 @@
 
 import UIKit
 
-class NotificationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+enum UserNotificationType {
+    case like(post: UserPost)
+    case follow
+}
+struct UserNotification {
+    let type: UserNotificationType
+    let text: String
+    let user: User
+    
+}
+final class NotificationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
 
     private let tableView: UITableView = {
         let tableView = UITableView()
+        tableView.isHidden = false
         tableView.register(NotificationlLikeEventTableViewCellTableViewCell.self, forCellReuseIdentifier: NotificationlLikeEventTableViewCellTableViewCell.identifier)
+        
         tableView.register(NotificationFollowEventTableViewCell.self, forCellReuseIdentifier: NotificationFollowEventTableViewCell.identifier)
         tableView.isHidden = false
         return tableView

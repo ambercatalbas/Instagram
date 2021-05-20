@@ -14,6 +14,8 @@ class NotificationFollowEventTableViewCell: UITableViewCell {
 
   static let identifier = "NotificationFollowEventTableViewCell"
     
+    weak var delegate: NotificationFollowEventTableViewCellDelegate?
+    
     private let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.masksToBounds = true

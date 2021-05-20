@@ -18,7 +18,7 @@
 		6421420D262B3EAA00FF4B30 /* InstagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6421420C262B3EAA00FF4B30 /* InstagramUITests.swift */; };
 		64214229262B415900FF4B30 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64214228262B415800FF4B30 /* ExploreViewController.swift */; };
 		6421422E262B416D00FF4B30 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6421422D262B416D00FF4B30 /* CameraViewController.swift */; };
-		64214233262B417F00FF4B30 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64214232262B417F00FF4B30 /* NotificationViewController.swift */; };
+		64214233262B417F00FF4B30 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64214232262B417F00FF4B30 /* NotificationsViewController.swift */; };
 		64214238262B419700FF4B30 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64214237262B419700FF4B30 /* ProfileViewController.swift */; };
 		6421423F262B41DC00FF4B30 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6421423E262B41DC00FF4B30 /* LoginViewController.swift */; };
 		64214247262B41EB00FF4B30 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64214246262B41EB00FF4B30 /* RegistrationViewController.swift */; };
@@ -88,7 +88,7 @@
 		6421420E262B3EAA00FF4B30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64214228262B415800FF4B30 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		6421422D262B416D00FF4B30 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		64214232262B417F00FF4B30 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		64214232262B417F00FF4B30 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		64214237262B419700FF4B30 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6421423E262B41DC00FF4B30 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		64214246262B41EB00FF4B30 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -212,9 +212,10 @@
 			children = (
 				6421423C262B41B100FF4B30 /* Other */,
 				642141EE262B3EA500FF4B30 /* HomeViewController.swift */,
+				64B8F34226559ABA0068D6EC /* Core Tabs */,
 				64214228262B415800FF4B30 /* ExploreViewController.swift */,
 				6421422D262B416D00FF4B30 /* CameraViewController.swift */,
-				64214232262B417F00FF4B30 /* NotificationViewController.swift */,
+				64214232262B417F00FF4B30 /* NotificationsViewController.swift */,
 				64214237262B419700FF4B30 /* ProfileViewController.swift */,
 			);
 			path = Controllers;
@@ -335,6 +336,13 @@
 				64B8F33D2640A0350068D6EC /* NotificationlLikeEventTableViewCellTableViewCell.swift */,
 			);
 			path = Notifications;
+			sourceTree = "<group>";
+		};
+		64B8F34226559ABA0068D6EC /* Core Tabs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Core Tabs";
 			sourceTree = "<group>";
 		};
 		662669E956D3995119CE9D3F /* Frameworks */ = {
@@ -603,7 +611,7 @@
 				64214229262B415900FF4B30 /* ExploreViewController.swift in Sources */,
 				6421426F262B42D800FF4B30 /* PublishPostViewController.swift in Sources */,
 				6421422E262B416D00FF4B30 /* CameraViewController.swift in Sources */,
-				64214233262B417F00FF4B30 /* NotificationViewController.swift in Sources */,
+				64214233262B417F00FF4B30 /* NotificationsViewController.swift in Sources */,
 				64214247262B41EB00FF4B30 /* RegistrationViewController.swift in Sources */,
 				64B8F33326408C400068D6EC /* NoNotificationsView.swift in Sources */,
 				6421426A262B42BC00FF4B30 /* PostEditorViewController.swift in Sources */,
