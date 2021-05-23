@@ -106,6 +106,7 @@ final class NotificationsViewController: UIViewController, UITableViewDelegate, 
             let cell = tableView.dequeueReusableCell(withIdentifier: NotificationLikeEventTableViewCellTableViewCell.identifier,
                                                      for: indexPath) as! NotificationLikeEventTableViewCellTableViewCell
             cell.configure(with: model)
+            cell.delegate = self
             return cell
         case .follow:
             // follow cell
@@ -122,3 +123,5 @@ final class NotificationsViewController: UIViewController, UITableViewDelegate, 
     }
     
 }
+
+extension Notification
